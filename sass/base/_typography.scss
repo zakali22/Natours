@@ -1,0 +1,109 @@
+html {
+  /* This sets a base value for all sizings from font-size to paddings. BASE VALUE IS 10px
+    1rem = 16px
+
+    The calculation 1rem = 10px is : 10px/16px * 100 = 62.5% */
+  font-size: 62.5%; // 10px
+  @include bp(huge-screen) {
+    font-size: 68.75%; // 11px
+  }
+  @include bp(tablet-landscape) {
+    font-size: 50%; // 9px
+  }
+  @include bp(tablet-portrait) {
+    font-size: 43.75%; // 7px
+  }
+  @include bp(phone) {
+    font-size: 37.5%; // 1rem = 6px;
+  }
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #fff;
+}
+
+.headline {
+  color: #fff;
+  &-main--headline {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 3.5rem;
+    animation-name: moveToLeft;
+    animation-duration: 2s;
+    @include bp(phone) {
+      letter-spacing: 2.5rem;
+    }
+  }
+  &-subtext--headline {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.9rem;
+    text-transform: uppercase;
+    animation: moveToRight 2s ease-in-out;
+    @include bp(phone) {
+      letter-spacing: 0.5rem;
+    }
+  }
+  &-secondary {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 4.5rem;
+    text-transform: uppercase;
+    background-image: linear-gradient(
+      45deg,
+      rgba(126, 213, 111, 0.8) 0%,
+      rgba(40, 180, 133, 0.8) 100%
+    );
+    -webkit-background-clip: text;
+    color: transparent;
+    @include bp(tablet-portrait) {
+      font-size: 3rem;
+    }
+  }
+  &-tertiary {
+    color: grey;
+    text-transform: uppercase;
+  }
+}
+
+.paragraph {
+  color: grey;
+  margin-bottom: 3rem;
+}
+
+i {
+  font-size: 6rem;
+  background-image: linear-gradient(
+    45deg,
+    rgba(126, 213, 111, 0.8) 0%,
+    rgba(40, 180, 133, 0.8) 100%
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.tours-info {
+  h5,
+  h1 {
+    font-weight: 100;
+    margin: 0;
+  }
+  h1 {
+    font-size: 7rem;
+  }
+  h5 {
+    font-size: 2rem;
+  }
+}
+.heading-span h2 {
+  color: white;
+  font-weight: 200;
+  font-size: 3rem;
+}

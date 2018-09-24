@@ -1,0 +1,50 @@
+.footer {
+  height: 50vh;
+  background-color: #404040;
+  padding: 15rem 0;
+  .row {
+    margin-top: 5rem;
+    @include bp(tablet-landscape) {
+      width: 80%;
+    }
+    .col-1-of-2 {
+      @include bp(tablet-landscape) {
+        margin-top: 4rem;
+        width: 100% !important;
+      }
+    }
+  }
+  &__logo {
+    text-align: center;
+  }
+
+  &__info-listing,
+  &__info-text {
+    list-style: none;
+    padding: 0;
+    border-top: 3px solid white;
+    display: inline-block;
+    padding-top: 2rem;
+    li {
+      display: inline;
+      padding: 1rem;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      a {
+        &:link,
+        &:visited,
+        &:active,
+        &:hover {
+          color: white;
+          text-decoration: none;
+        }
+      }
+    }
+    @include bp(tablet-landscape) {
+      width: 100%;
+    }
+  }
+  &__info-text {
+    margin-top: 1.5rem;
+  }
+}

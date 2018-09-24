@@ -1,0 +1,32 @@
+.composition {
+  position: relative;
+  @include bp(tablet-portrait) {
+    margin-top: 7.75rem;
+  }
+  &__images {
+    width: 65%;
+    box-shadow: 0 0.9rem 1rem rgba(0, 0, 0, 0.5);
+    position: absolute;
+    transition: all 0.2s ease-in-out;
+    &--p1 {
+      left: 0;
+      top: -2rem;
+    }
+    &--p2 {
+      top: 3rem;
+      left: 50%;
+    }
+    &--p3 {
+      top: 12rem;
+      left: 20%;
+    }
+    &:hover {
+      transform: scale(1.05) translateY(-1rem);
+      box-shadow: 0 1.9rem 1rem rgba(0, 0, 0, 0.8);
+      z-index: 1;
+    }
+  }
+  &:hover &__images:not(:hover) {
+    transform: scale(0.85);
+  }
+}

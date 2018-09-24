@@ -1,0 +1,22 @@
+.util-text-center {
+  text-align: center;
+}
+
+.util-marginbottom-8 {
+  margin-bottom: 8rem;
+  @include bp(tablet-portrait) {
+    margin-bottom: 1rem;
+  }
+}
+
+.util-marginbottom-2 {
+  margin-bottom: 2rem;
+}
+
+.util-margintop-8 {
+  margin-top: 8rem;
+}
+
+.util-margintop-2 {
+  margin-top: 2rem;
+}

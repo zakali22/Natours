@@ -1,0 +1,88 @@
+.btn {
+  &,
+  &:link,
+  &:visited {
+    /* Main initial state of the link */
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 1.5rem 4.5rem;
+    display: inline-block;
+    /* To give it's own line */
+    margin-top: 6rem;
+    border-radius: 3rem;
+    transition: all 0.6s ease-in-out; /* Whatever is defined in the :hover and :active */
+    backface-visibility: hidden;
+    position: relative;
+    animation: moveUp 2s ease-in-out;
+    animation-fill-mode: backwards;
+    font-size: 1.6rem;
+  }
+  &--white {
+    color: $light-grey;
+    background-color: $white;
+    &::after {
+      background: $white;
+      color: $light-grey;
+    }
+  }
+  &--green {
+    color: white;
+    background: linear-gradient(
+      45deg,
+      rgba(126, 213, 111, 0.8) 0%,
+      rgba(40, 180, 133, 0.8) 100%
+    );
+    &::after {
+      color: white;
+      background: linear-gradient(
+        45deg,
+        rgba(126, 213, 111, 0.8) 0%,
+        rgba(40, 180, 133, 0.8) 100%
+      );
+    }
+  }
+  &:hover {
+    @include buttonStates(-0.03rem, 1rem, 2rem);
+    &::after {
+      transform: scale(1.5);
+      opacity: 0;
+    }
+  }
+  &:active,
+  &:focus {
+    @include buttonStates(-0.01rem, 0.3rem, 2rem);
+  }
+  /* To create a simple scaling hover button */
+  &::after {
+    content: "";
+    z-index: -1; /* To always be behind */
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.4s;
+    height: 100%;
+    width: 100%;
+    border-radius: 3rem;
+  }
+
+  &-text {
+    &:link,
+    &:visited {
+      color: $light-green;
+      padding: 1rem 0.5rem;
+      border-bottom: 0.1rem solid $light-green;
+      text-decoration: none;
+      font-size: 1.7rem;
+      font-weight: 700;
+      transition: all 0.2s ease-in-out;
+    }
+    &:hover {
+      color: white;
+      background-color: $light-green;
+      @include buttonStates(-4rem, 1.5rem, 2rem);
+    }
+    &:active {
+      @include buttonStates(0, 0.3rem, 2rem);
+    }
+  }
+}

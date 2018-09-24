@@ -1,0 +1,42 @@
+@mixin buttonStates($translate, $bottomLength, $blur) {
+  transform: translateY($translate);
+  box-shadow: 0 $bottomLength $blur rgba(0, 0, 0, 0.2);
+}
+
+@mixin clearfix {
+  &::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+}
+
+// MEDIA QUERY
+// 1em = 16px
+@mixin bp($point) {
+  @if $point == phone {
+    @media (max-width: 37.5em) {
+      // 600px
+      @content;
+    }
+  } @else if $point == tablet-portrait {
+    @media (max-width: 56.25em) {
+      // 900px
+      @content;
+    }
+  } @else if $point == tablet-landscape {
+    @media (max-width: 75em) {
+      // 1200px
+      @content;
+    }
+  } @else if $point == normal {
+    @media (max-width: 1530px) and (min-width: 1200px) {
+      @content;
+    }
+  } @else if $point == huge-screen {
+    @media (min-width: 112.5em) {
+      // 1800px
+      @content;
+    }
+  }
+}
